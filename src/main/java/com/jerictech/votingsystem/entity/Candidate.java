@@ -15,7 +15,7 @@ public class Candidate {
 
     @Id
     @Column(name = "id")
-    private long candidateId;
+    private int candidateId;
 
     @Column(name = "candidate_name")
     private String candidateName;

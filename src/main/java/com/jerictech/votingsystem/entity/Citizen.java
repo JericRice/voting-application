@@ -14,8 +14,11 @@ public class Citizen {
 
     @Id
     @Column(name = "id")
-    private long id;
+    private int id;
 
     @Column(name = "citizen_name")
     private String name;
+
+
+
 }
