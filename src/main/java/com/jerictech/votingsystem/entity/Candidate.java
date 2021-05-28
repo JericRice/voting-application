@@ -1,6 +1,7 @@
 package com.jerictech.votingsystem.entity;
 
-import lombok.*;
+
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,13 +10,14 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "citizens")
-public class Citizen {
+@Table(name = "candidates")
+public class Candidate {
 
     @Id
     @Column(name = "id")
-    private long id;
+    private int candidateId;
 
-    @Column(name = "citizen_name")
-    private String name;
+    @Column(name = "candidate_name")
+    private String candidateName;
+
 }
