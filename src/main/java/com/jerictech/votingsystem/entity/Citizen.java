@@ -1,11 +1,14 @@
 package com.jerictech.votingsystem.entity;
 
-import lombok.*;
+
+
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Data
 @Entity
@@ -19,6 +22,11 @@ public class Citizen {
     @Column(name = "citizen_name")
     private String name;
 
+    @Column(name = "hasvoted")
+    private boolean hasVoted;
 
 
+    public boolean getHasVoted() {
+        return hasVoted;
+    }
 }

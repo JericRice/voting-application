@@ -7,7 +7,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Data
 @Controller
@@ -21,7 +22,17 @@ public class VotingController {
 
     @RequestMapping("/")
     public String goToVote() {
-        return "vote.html";
+        return "vote";
+    }
+
+    @RequestMapping("/doLogin")
+    public String doLogin(@RequestParam String name) {
+        Citizen citizen = citizenRepo.findByName(name);
+        if (!citizen.getHasVoted()) {
+            return "/performVote";
+        } else {
+            return "/alreadyVoted";
+        }
     }
 
 }
